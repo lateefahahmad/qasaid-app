@@ -2,8 +2,8 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 // Import your screen components
-import HomeScreen from './components/HomeScreen';
-import ProfileScreen from './components/ProfileScreen';
+import HomeScreen from './HomeScreen';
+import ProfileScreen from './ProfileScreen';
 
 // Create your stack navigator
 const AppNavigator = createStackNavigator({
