@@ -1,17 +1,43 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import React from 'react';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-// Import your screen components
-import HomeScreen from './HomeScreen';
-import ProfileScreen from './ProfileScreen';
+const NavigationBar = () => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.navItem}>
+        <Text style={styles.navText}>Home</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem}>
+        <Text style={styles.navText}>Profile</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.navItem}>
+        <Text style={styles.navText}>Settings</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-// Create your stack navigator
-const AppNavigator = createStackNavigator({
-  Home: { screen: HomeScreen },
-  Profile: { screen: ProfileScreen },
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: 'lightgray',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 60,
+    paddingHorizontal: 20,
+  },
+  navItem: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  navText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
 
-// Create the app container
-const AppContainer = createAppContainer(AppNavigator);
-
-export default AppContainer;
+export default NavigationBar;
